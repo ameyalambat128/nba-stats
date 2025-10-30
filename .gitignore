@@ -1,4 +1,5 @@
 # Ignore raw datasets and compiled artifacts
 nba-dataset/
+data/processed/
 __pycache__/
 *.pyc

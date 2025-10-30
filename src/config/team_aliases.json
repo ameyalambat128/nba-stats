@@ -1,0 +1,253 @@
+[
+  {
+    "canonical_id": "ATL",
+    "aliases": [
+      "ATL",
+      "ATLANTA HAWKS",
+      "ST. LOUIS HAWKS",
+      "TRI-CITIES BLACKHAWKS",
+      "ST LOUIS HAWKS",
+      "TRICITIES BLACKHAWKS"
+    ]
+  },
+  {
+    "canonical_id": "BOS",
+    "aliases": [
+      "BOS",
+      "BOSTON CELTICS"
+    ]
+  },
+  {
+    "canonical_id": "BKN",
+    "aliases": [
+      "BKN",
+      "BROOKLYN NETS",
+      "NEW JERSEY NETS",
+      "NEW YORK NETS"
+    ]
+  },
+  {
+    "canonical_id": "CHA",
+    "aliases": [
+      "CHA",
+      "CHARLOTTE HORNETS",
+      "CHARLOTTE BOBCATS"
+    ]
+  },
+  {
+    "canonical_id": "CHI",
+    "aliases": [
+      "CHI",
+      "CHICAGO BULLS"
+    ]
+  },
+  {
+    "canonical_id": "CLE",
+    "aliases": [
+      "CLE",
+      "CLEVELAND CAVALIERS",
+      "CLEVELAND CAVS"
+    ]
+  },
+  {
+    "canonical_id": "DAL",
+    "aliases": [
+      "DAL",
+      "DALLAS MAVERICKS",
+      "DALLAS MAVS"
+    ]
+  },
+  {
+    "canonical_id": "DEN",
+    "aliases": [
+      "DEN",
+      "DENVER NUGGETS"
+    ]
+  },
+  {
+    "canonical_id": "DET",
+    "aliases": [
+      "DET",
+      "DETROIT PISTONS",
+      "FORT WAYNE PISTONS"
+    ]
+  },
+  {
+    "canonical_id": "GSW",
+    "aliases": [
+      "GSW",
+      "GOLDEN STATE WARRIORS",
+      "SAN FRANCISCO WARRIORS",
+      "PHILADELPHIA WARRIORS"
+    ]
+  },
+  {
+    "canonical_id": "HOU",
+    "aliases": [
+      "HOU",
+      "HOUSTON ROCKETS"
+    ]
+  },
+  {
+    "canonical_id": "IND",
+    "aliases": [
+      "IND",
+      "INDIANA PACERS"
+    ]
+  },
+  {
+    "canonical_id": "LAC",
+    "aliases": [
+      "LAC",
+      "LOS ANGELES CLIPPERS",
+      "LA CLIPPERS",
+      "SAN DIEGO CLIPPERS",
+      "BUFFALO BRAVES"
+    ]
+  },
+  {
+    "canonical_id": "LAL",
+    "aliases": [
+      "LAL",
+      "LOS ANGELES LAKERS",
+      "LA LAKERS",
+      "MINNEAPOLIS LAKERS"
+    ]
+  },
+  {
+    "canonical_id": "MEM",
+    "aliases": [
+      "MEM",
+      "MEMPHIS GRIZZLIES",
+      "VANCOUVER GRIZZLIES"
+    ]
+  },
+  {
+    "canonical_id": "MIA",
+    "aliases": [
+      "MIA",
+      "MIAMI HEAT"
+    ]
+  },
+  {
+    "canonical_id": "MIL",
+    "aliases": [
+      "MIL",
+      "MILWAUKEE BUCKS"
+    ]
+  },
+  {
+    "canonical_id": "MIN",
+    "aliases": [
+      "MIN",
+      "MINNESOTA TIMBERWOLVES"
+    ]
+  },
+  {
+    "canonical_id": "NOP",
+    "aliases": [
+      "NOP",
+      "NEW ORLEANS PELICANS",
+      "NEW ORLEANS HORNETS",
+      "NO/JOMO HORNETS"
+    ]
+  },
+  {
+    "canonical_id": "NYK",
+    "aliases": [
+      "NYK",
+      "NEW YORK KNICKS",
+      "NY KNICKS"
+    ]
+  },
+  {
+    "canonical_id": "OKC",
+    "aliases": [
+      "OKC",
+      "OKLAHOMA CITY THUNDER",
+      "SEATTLE SUPERSONICS",
+      "SEATTLE SUPERSONIC",
+      "SEATTLE SONICS"
+    ]
+  },
+  {
+    "canonical_id": "ORL",
+    "aliases": [
+      "ORL",
+      "ORLANDO MAGIC"
+    ]
+  },
+  {
+    "canonical_id": "PHI",
+    "aliases": [
+      "PHI",
+      "PHILADELPHIA 76ERS",
+      "PHILADELPHIA SIXERS",
+      "SYRACUSE NATIONALS"
+    ]
+  },
+  {
+    "canonical_id": "PHX",
+    "aliases": [
+      "PHX",
+      "PHOENIX SUNS",
+      "PHX SUNS"
+    ]
+  },
+  {
+    "canonical_id": "POR",
+    "aliases": [
+      "POR",
+      "PORTLAND TRAIL BLAZERS",
+      "PORTLAND BLAZERS"
+    ]
+  },
+  {
+    "canonical_id": "SAC",
+    "aliases": [
+      "SAC",
+      "SACRAMENTO KINGS",
+      "KANSAS CITY KINGS",
+      "KANSAS CITY-OMAHA KINGS",
+      "CINCINNATI ROYALS",
+      "ROCHESTER ROYALS"
+    ]
+  },
+  {
+    "canonical_id": "SAS",
+    "aliases": [
+      "SAS",
+      "SAN ANTONIO SPURS",
+      "SA SPURS",
+      "SAN ANTONIO CHAPARRALS",
+      "DALLAS CHAPARRALS"
+    ]
+  },
+  {
+    "canonical_id": "TOR",
+    "aliases": [
+      "TOR",
+      "TORONTO RAPTORS"
+    ]
+  },
+  {
+    "canonical_id": "UTA",
+    "aliases": [
+      "UTA",
+      "UTAH JAZZ",
+      "NEW ORLEANS JAZZ"
+    ]
+  },
+  {
+    "canonical_id": "WAS",
+    "aliases": [
+      "WAS",
+      "WASHINGTON WIZARDS",
+      "WASHINGTON BULLETS",
+      "CAPITAL BULLETS",
+      "BALTIMORE BULLETS",
+      "CHICAGO ZEPHYRS",
+      "CHICAGO PACKERS"
+    ]
+  }
+]

@@ -9,10 +9,14 @@ This module focuses on:
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Iterable, Optional
 
 import pandas as pd
+
+DEFAULT_ALIAS_PATH = Path(__file__).resolve().parent / "config" / "team_aliases.json"
 
 
 @dataclass
@@ -27,7 +31,9 @@ class Preprocessor:
     """Bundle of preprocessing routines applied to raw ingested data."""
 
     def __init__(self, *, team_aliases: Optional[Iterable[TeamAlias]] = None) -> None:
-        self.team_aliases = list(team_aliases or [])
+        if team_aliases is None:
+            team_aliases = load_team_aliases()
+        self.team_aliases = list(team_aliases)
         self._alias_map = self._build_alias_map()
 
     def _build_alias_map(self) -> dict[str, str]:
@@ -79,12 +85,13 @@ class Preprocessor:
         result = df.copy()
         required_cols = [
             "FGA",
+            "FGM",
             "FTA",
             "TOV",
             "OREB",
             "DREB",
             "OPP_FGA",
-            "OPP_FG",
+            "OPP_FGM",
             "OPP_FTA",
             "OPP_TOV",
             "OPP_OREB",
@@ -101,10 +108,24 @@ class Preprocessor:
         opp_possessions = (
             result["OPP_FGA"]
             + 0.4 * result["OPP_FTA"]
-            - 1.07 * opp_orb_factor * (result["OPP_FGA"] - result["OPP_FG"])
+            - 1.07 * opp_orb_factor * (result["OPP_FGA"] - result["OPP_FGM"])
             + result["OPP_TOV"]
         )
 
         result["EST_POSSESSIONS"] = 0.5 * (team_possessions + opp_possessions)
         return result
 
+
+def load_team_aliases(path: Optional[Path] = None) -> list[TeamAlias]:
+    """
+    Load team aliases from JSON configuration.
+
+    Parameters
+    ----------
+    path:
+        Optional custom path; defaults to config/team_aliases.json alongside this module.
+    """
+    alias_path = path or DEFAULT_ALIAS_PATH
+    with alias_path.open("r", encoding="utf-8") as fh:
+        raw_aliases = json.load(fh)
+    return [TeamAlias(**entry) for entry in raw_aliases]

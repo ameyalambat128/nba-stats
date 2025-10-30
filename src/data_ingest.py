@@ -67,13 +67,18 @@ class NBADataIngestor:
         columns:
             Optional subset of columns to select when supported.
         """
+        df: Optional[pd.DataFrame] = None
         if self.prefer_sqlite:
             try:
-                return self._read_sqlite_table(table, columns=columns)
+                df = self._read_sqlite_table(table, columns=columns)
             except (sqlite3.DatabaseError, FileNotFoundError, ValueError):
                 pass
 
-        return self._read_csv_table(table, columns=columns)
+        if df is None:
+            df = self._read_csv_table(table, columns=columns)
+
+        df.columns = [col.upper() for col in df.columns]
+        return df
 
     def _read_sqlite_table(self, table: str, *, columns: Optional[Iterable[str]] = None) -> pd.DataFrame:
         """Internal helper to read a table from the SQLite database."""
@@ -144,4 +149,3 @@ class NBADataIngestor:
     def player_info(self) -> pd.DataFrame:
         """Return player metadata."""
         return self.read_table("common_player_info")
-

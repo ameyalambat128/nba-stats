@@ -19,6 +19,9 @@
 - Maintain concise commits without labels or watermarks.
 - Ask clarifying questions when assumptions arise.
 - Document evolving context in this file for future agents.
+- Development branches are person-specific (e.g., current work on `ameya` branch).
+- Intermediate artifacts live under `data/processed/` (CSV format, directory git-ignored).
+- Standardize shared visualizations on Matplotlib (Seaborn optional for styling).
 
 # Pipeline Vision (current draft)
 1. Ingest data from CSV/SQLite into unified schema with season metadata.
@@ -28,3 +31,7 @@
 5. Train predictive/clustering models (logistic, linear, ensembles, K-means).
 6. Summarize findings via visualizations and dashboards; iterate on insights.
 
+# Recent Updates
+- Added `src/pipeline/season_summary.py` to reshape game stats into team-level features and write season aggregates to `data/processed/`.
+- Created `src/config/team_aliases.json` with canonical franchise mappings consumed by `Preprocessor`.
+- Notebook scaffold: `notebooks/01_data_overview.ipynb` demonstrates basic ingestion checks.
