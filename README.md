@@ -20,7 +20,7 @@ For deeper context and historical notes, see `AGENTS.md`.
 - `src/pipeline/`: Orchestrated workflows (e.g., team game features + season summaries).
 - `notebooks/`: Jupyter notebooks for exploratory analysis (`README.md` inside lists naming conventions).
 - `data/processed/`: Git-ignored directory for cached season/team/player aggregates and intermediate files (stored as CSV for simplicity).
-- `nba-dataset/`: **Not tracked by git**. Place the Kaggle CSVs or `nba.sqlite` here.
+- `nba-dataset/`: **Not tracked by git**. Place the Kaggle CSVs or `nba.sqlite` here (detected automatically via paths relative to repo root).
 - `AGENTS.md`: Working log for agents and context keepers.
 
 ## Getting Started

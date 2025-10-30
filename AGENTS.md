@@ -25,6 +25,7 @@
 - Dependencies managed via project virtual environment `.venv` with packages listed in `requirements.txt`.
 - Jupyter notebooks should use the `nba-stats (venv)` kernel registered via `ipykernel`.
 - Notebook templates include a helper to add the repo root to `sys.path`; reuse that snippet to avoid `ModuleNotFoundError` when importing from `src`.
+- Data ingestion defaults to dataset paths relative to the repository root (`nba-dataset/`).
 
 # Pipeline Vision (current draft)
 1. Ingest data from CSV/SQLite into unified schema with season metadata.

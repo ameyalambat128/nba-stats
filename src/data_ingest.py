@@ -17,7 +17,8 @@ import pandas as pd
 import sqlite3
 
 
-DEFAULT_DATA_ROOT = Path("nba-dataset")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_DATA_ROOT = PROJECT_ROOT / "nba-dataset"
 
 
 @dataclass(frozen=True)
@@ -29,10 +30,14 @@ class DataSourceConfig:
 
     def validate(self) -> None:
         """Ensure the configured paths exist."""
-        if not self.csv_dir.exists():
-            raise FileNotFoundError(f"CSV directory not found: {self.csv_dir}")
-        if not self.sqlite_path.exists():
-            raise FileNotFoundError(f"SQLite database not found: {self.sqlite_path}")
+        csv_dir = self.csv_dir.expanduser().resolve()
+        sqlite_path = self.sqlite_path.expanduser().resolve()
+        if not csv_dir.exists():
+            raise FileNotFoundError(f"CSV directory not found: {csv_dir}")
+        if not sqlite_path.exists():
+            raise FileNotFoundError(f"SQLite database not found: {sqlite_path}")
+        object.__setattr__(self, "csv_dir", csv_dir)
+        object.__setattr__(self, "sqlite_path", sqlite_path)
 
 
 class NBADataIngestor:
