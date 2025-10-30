@@ -20,18 +20,19 @@ For deeper context and historical notes, see `AGENTS.md`.
 - `src/pipeline/`: Orchestrated workflows (e.g., team game features + season summaries).
 - `notebooks/`: Jupyter notebooks for exploratory analysis (`README.md` inside lists naming conventions).
 - `data/processed/`: Git-ignored directory for cached season/team/player aggregates and intermediate files (stored as CSV for simplicity).
-- `nba-dataset/`: **Not tracked by git**. Place the Kaggle CSVs or `nba.sqlite` here.
+- `nba-dataset/`: **Not tracked by git**. Place the Kaggle CSVs or `nba.sqlite` here (detected automatically via paths relative to repo root).
 - `AGENTS.md`: Working log for agents and context keepers.
 
 ## Getting Started
 
 1. Ensure Python 3.10+ is available.
-2. Install dependencies (currently standard library + `pandas`, `pypdf` for reading the brief). Consider creating a virtual environment.
+2. Create/activate the project virtual environment and install dependencies:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
-   pip install pandas pypdf
+   pip install -r requirements.txt
    ```
+   Core packages include pandas, matplotlib, seaborn, scikit-learn, statsmodels, pyarrow, and Jupyter tooling.
 3. Download the Kaggle NBA dataset and drop either the `csv/` directory or `nba.sqlite` database into `nba-dataset/`.
 
 ## Using the Pipeline Modules
@@ -59,12 +60,15 @@ summary = generate_team_season_summary(ingestor, regular_season_only=True)
 
 More detailed usage patterns will be captured in forthcoming notebooks and module docstrings.
 
+- Tip: when authoring new notebooks, ensure the project root is on `PYTHONPATH` (either start Jupyter from the repo root or insert a small helper that appends `Path.cwd().parent` when running inside `notebooks/`).
+
 ## Collaboration Notes
 - Follow the clean-code conventions (descriptive filenames/functions, minimal duplication).
 - Commit frequently with concise messages (e.g., `add team aggregation`).
 - Keep notebooks tidy; move reusable logic into `src/`.
 - Record major context decisions in `AGENTS.md`.
 - Use Matplotlib (with Seaborn as needed) for shared visualizations unless otherwise noted.
+- When working in notebooks, select the Jupyter kernel named `nba-stats (venv)` (installed via `ipykernel`).
 
 ## Next Steps
 - Flesh out preprocessing pipelines (team alias mapping, possession estimation).
