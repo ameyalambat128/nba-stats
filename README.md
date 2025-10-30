@@ -17,7 +17,9 @@ For deeper context and historical notes, see `AGENTS.md`.
   - `preprocess.py`: Cleaning helpers for aligning team IDs, tagging seasons, and estimating possessions.
   - `features.py`: Feature engineering routines (pace, offensive/defensive efficiency, shot profile, AST/TOV).
   - `aggregation.py`: Season- and player-level aggregation helpers.
+- `src/pipeline/`: Orchestrated workflows (e.g., team game features + season summaries).
 - `notebooks/`: Jupyter notebooks for exploratory analysis (`README.md` inside lists naming conventions).
+- `data/processed/`: Git-ignored directory for cached season/team/player aggregates and intermediate files (stored as CSV for simplicity).
 - `nba-dataset/`: **Not tracked by git**. Place the Kaggle CSVs or `nba.sqlite` here.
 - `AGENTS.md`: Working log for agents and context keepers.
 
@@ -47,6 +49,14 @@ line_scores = ingestor.line_scores()
 # Merge, preprocess, and engineer features as needed...
 ```
 
+For a quick aggregate export:
+
+```python
+from src.pipeline import generate_team_season_summary
+
+summary = generate_team_season_summary(ingestor, regular_season_only=True)
+```
+
 More detailed usage patterns will be captured in forthcoming notebooks and module docstrings.
 
 ## Collaboration Notes
@@ -54,6 +64,7 @@ More detailed usage patterns will be captured in forthcoming notebooks and modul
 - Commit frequently with concise messages (e.g., `add team aggregation`).
 - Keep notebooks tidy; move reusable logic into `src/`.
 - Record major context decisions in `AGENTS.md`.
+- Use Matplotlib (with Seaborn as needed) for shared visualizations unless otherwise noted.
 
 ## Next Steps
 - Flesh out preprocessing pipelines (team alias mapping, possession estimation).
