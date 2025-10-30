@@ -1,0 +1,4 @@
+# Ignore raw datasets and compiled artifacts
+nba-dataset/
+__pycache__/
+*.pyc
