@@ -1,5 +1,7 @@
 # Ignore raw datasets and compiled artifacts
 nba-dataset/
 data/processed/
+.venv/
+venv/
 __pycache__/
 *.pyc
