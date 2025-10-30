@@ -3,6 +3,7 @@
 Welcome! This repository hosts our CSE 572 project exploring how NBA playing styles evolved over the league's 75+ years, with a focus on pace, efficiency, and the rise of the three-point shot.
 
 ## Project Goals
+
 - Quantify the evolution of playing style and identify distinct eras.
 - Predict team success using pace and efficiency metrics.
 - Measure the impact of the three-point revolution and modern offensive strategies.
@@ -10,6 +11,7 @@ Welcome! This repository hosts our CSE 572 project exploring how NBA playing sty
 For deeper context and historical notes, see `AGENTS.md`.
 
 ## Repository Layout
+
 - `src/`: Python package housing reusable pipeline code.
   - `data_ingest.py`: Utilities for loading tables from the Kaggle dataset (CSV or SQLite) with regular-season/playoff filtering.
   - `preprocess.py`: Cleaning helpers for aligning team IDs, tagging seasons, and estimating possessions.
@@ -20,6 +22,7 @@ For deeper context and historical notes, see `AGENTS.md`.
 - `AGENTS.md`: Working log for agents and context keepers.
 
 ## Getting Started
+
 1. Ensure Python 3.10+ is available.
 2. Install dependencies (currently standard library + `pandas`, `pypdf` for reading the brief). Consider creating a virtual environment.
    ```bash
@@ -30,6 +33,7 @@ For deeper context and historical notes, see `AGENTS.md`.
 3. Download the Kaggle NBA dataset and drop either the `csv/` directory or `nba.sqlite` database into `nba-dataset/`.
 
 ## Using the Pipeline Modules
+
 ```python
 from src.data_ingest import NBADataIngestor
 from src.preprocess import Preprocessor
