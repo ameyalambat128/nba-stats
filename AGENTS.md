@@ -23,6 +23,7 @@
 - Intermediate artifacts live under `data/processed/` (CSV format, directory git-ignored).
 - Standardize shared visualizations on Matplotlib (Seaborn optional for styling).
 - Dependencies managed via project virtual environment `.venv` with packages listed in `requirements.txt`.
+- Jupyter notebooks should use the `nba-stats (venv)` kernel registered via `ipykernel`.
 
 # Pipeline Vision (current draft)
 1. Ingest data from CSV/SQLite into unified schema with season metadata.
@@ -36,3 +37,4 @@
 - Added `src/pipeline/season_summary.py` to reshape game stats into team-level features and write season aggregates to `data/processed/`.
 - Created `src/config/team_aliases.json` with canonical franchise mappings consumed by `Preprocessor`.
 - Notebook scaffold: `notebooks/01_data_overview.ipynb` demonstrates basic ingestion checks.
+- Virtual environment now bundles scikit-learn, statsmodels, pyarrow, and Jupyter tooling for modeling/EDA workflows.

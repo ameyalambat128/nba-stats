@@ -32,6 +32,7 @@ For deeper context and historical notes, see `AGENTS.md`.
    source .venv/bin/activate
    pip install -r requirements.txt
    ```
+   Core packages include pandas, matplotlib, seaborn, scikit-learn, statsmodels, pyarrow, and Jupyter tooling.
 3. Download the Kaggle NBA dataset and drop either the `csv/` directory or `nba.sqlite` database into `nba-dataset/`.
 
 ## Using the Pipeline Modules
@@ -65,6 +66,7 @@ More detailed usage patterns will be captured in forthcoming notebooks and modul
 - Keep notebooks tidy; move reusable logic into `src/`.
 - Record major context decisions in `AGENTS.md`.
 - Use Matplotlib (with Seaborn as needed) for shared visualizations unless otherwise noted.
+- When working in notebooks, select the Jupyter kernel named `nba-stats (venv)` (installed via `ipykernel`).
 
 ## Next Steps
 - Flesh out preprocessing pipelines (team alias mapping, possession estimation).
