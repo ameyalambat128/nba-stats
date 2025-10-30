@@ -22,6 +22,7 @@
 - Development branches are person-specific (e.g., current work on `ameya` branch).
 - Intermediate artifacts live under `data/processed/` (CSV format, directory git-ignored).
 - Standardize shared visualizations on Matplotlib (Seaborn optional for styling).
+- Dependencies managed via project virtual environment `.venv` with packages listed in `requirements.txt`.
 
 # Pipeline Vision (current draft)
 1. Ingest data from CSV/SQLite into unified schema with season metadata.

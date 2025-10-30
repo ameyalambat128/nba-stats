@@ -26,11 +26,11 @@ For deeper context and historical notes, see `AGENTS.md`.
 ## Getting Started
 
 1. Ensure Python 3.10+ is available.
-2. Install dependencies (currently standard library + `pandas`, `pypdf` for reading the brief). Consider creating a virtual environment.
+2. Create/activate the project virtual environment and install dependencies:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
-   pip install pandas pypdf
+   pip install -r requirements.txt
    ```
 3. Download the Kaggle NBA dataset and drop either the `csv/` directory or `nba.sqlite` database into `nba-dataset/`.
 
