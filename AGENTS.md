@@ -24,6 +24,7 @@
 - Standardize shared visualizations on Matplotlib (Seaborn optional for styling).
 - Dependencies managed via project virtual environment `.venv` with packages listed in `requirements.txt`.
 - Jupyter notebooks should use the `nba-stats (venv)` kernel registered via `ipykernel`.
+- Notebook templates include a helper to add the repo root to `sys.path`; reuse that snippet to avoid `ModuleNotFoundError` when importing from `src`.
 
 # Pipeline Vision (current draft)
 1. Ingest data from CSV/SQLite into unified schema with season metadata.
