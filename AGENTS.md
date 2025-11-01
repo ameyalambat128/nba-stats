@@ -40,3 +40,4 @@
 - Created `src/config/team_aliases.json` with canonical franchise mappings consumed by `Preprocessor`.
 - Notebook scaffold: `notebooks/01_data_overview.ipynb` demonstrates basic ingestion checks.
 - Virtual environment now bundles scikit-learn, statsmodels, pyarrow, and Jupyter tooling for modeling/EDA workflows.
+- Added `notebooks/02_era_analysis.ipynb` to visualize pace, three-point rate, and efficiency trends.

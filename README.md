@@ -61,6 +61,9 @@ summary = generate_team_season_summary(ingestor, regular_season_only=True)
 More detailed usage patterns will be captured in forthcoming notebooks and module docstrings.
 
 - Tip: when authoring new notebooks, ensure the project root is on `PYTHONPATH` (either start Jupyter from the repo root or insert a small helper that appends `Path.cwd().parent` when running inside `notebooks/`).
+- Current notebooks:
+  - `01_data_overview.ipynb`: smoke-tests ingestion utilities.
+  - `02_era_analysis.ipynb`: regular-season era trends (pace, 3P rate, efficiency scatter).
 
 ## Collaboration Notes
 - Follow the clean-code conventions (descriptive filenames/functions, minimal duplication).
