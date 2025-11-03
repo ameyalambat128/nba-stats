@@ -49,6 +49,12 @@ def parse_args() -> argparse.Namespace:
         help="Number of rows from the summary to display (default: 5).",
     )
     parser.add_argument(
+        "--era-preview-rows",
+        type=int,
+        default=6,
+        help="Number of rows from the era summary to display (default: 6).",
+    )
+    parser.add_argument(
         "--prefer-sqlite",
         action="store_true",
         help="Prefer reading from SQLite when available (default).",
@@ -72,17 +78,23 @@ def main() -> None:
     ingestor = NBADataIngestor(prefer_sqlite=prefer_sqlite)
     preprocessor = Preprocessor()
 
-    summary = generate_team_season_summary(
+    team_result = generate_team_season_summary(
         ingestor,
         preprocessor=preprocessor,
         playoffs_only=args.playoffs,
         regular_season_only=args.regular_season,
         output_dir=args.output_dir,
         save=not args.no_save,
+        return_era_summary=True,
     )
+    summary, era_summary = team_result
 
     preview = summary.head(args.preview_rows)
     print(preview.to_string(index=False))
+    print()
+    print("Era summary:")
+    era_preview = era_summary.head(args.era_preview_rows)
+    print(era_preview.to_string(index=False))
 
     issues = validate_team_summary(summary)
     if issues:
@@ -91,6 +103,13 @@ def main() -> None:
             print(f"- {issue}", file=sys.stderr)
     else:
         print("Validation checks passed.", file=sys.stderr)
+
+    if not args.no_save:
+        tag = "playoffs" if args.playoffs else "regular" if args.regular_season else "all"
+        team_path = args.output_dir / f"team_season_{tag}.csv"
+        era_path = args.output_dir / f"team_era_{tag}.csv"
+        print(f"Saved team summary to {team_path}")
+        print(f"Saved era summary to {era_path}")
 
 
 if __name__ == "__main__":

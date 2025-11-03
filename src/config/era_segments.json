@@ -1,0 +1,44 @@
+[
+  {
+    "key": "pre_shot_clock",
+    "label": "Early BAA/NBL",
+    "start_year": 1946,
+    "end_year": 1953,
+    "description": "Pre-shot clock era defined by low pace and formative league structure."
+  },
+  {
+    "key": "shot_clock_boom",
+    "label": "Shot Clock Expansion",
+    "start_year": 1954,
+    "end_year": 1979,
+    "description": "Shot clock introduction through the 1979 three-point adoption."
+  },
+  {
+    "key": "three_point_adoption",
+    "label": "Three-Point Adoption",
+    "start_year": 1980,
+    "end_year": 1996,
+    "description": "Early three-point era and high-post offenses before hand-check rule changes."
+  },
+  {
+    "key": "handcheck_isolation",
+    "label": "Hand-Check / Iso Era",
+    "start_year": 1997,
+    "end_year": 2004,
+    "description": "Physical perimeter defense and isolation-heavy offenses."
+  },
+  {
+    "key": "pace_and_space_rise",
+    "label": "Pace-and-Space Rise",
+    "start_year": 2005,
+    "end_year": 2013,
+    "description": "Spread pick-and-roll and pace uptick ahead of the modern three-point boom."
+  },
+  {
+    "key": "modern_three_point",
+    "label": "Modern Pace & 3PT Revolution",
+    "start_year": 2014,
+    "end_year": null,
+    "description": "Post-2014 pace and efficiency surge driven by spacing and analytics."
+  }
+]
