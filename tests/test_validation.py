@@ -54,5 +54,12 @@ def test_assert_team_summary_valid_runs_pipeline_when_data_available():
     except FileNotFoundError:
         pytest.skip("NBA dataset not available locally.")
 
-    summary = generate_team_season_summary(ingestor, regular_season_only=True, save=False)
+    summary, era_summary = generate_team_season_summary(
+        ingestor,
+        regular_season_only=True,
+        save=False,
+        return_era_summary=True,
+    )
+    assert not era_summary.empty
+    assert set(["ERA_KEY", "ERA_LABEL"]).issubset(summary.columns)
     assert_team_summary_valid(summary)

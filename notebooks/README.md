@@ -9,3 +9,4 @@
 ## Current Notebooks
 - `01_data_overview.ipynb`: quick table listings and regular vs playoff sampling.
 - `02_era_analysis.ipynb`: pace, three-point, and efficiency era trends using regular-season aggregates.
+- `03_era_breakdown.ipynb`: visual summary of the configured era segments (pace progression + three-point rates).

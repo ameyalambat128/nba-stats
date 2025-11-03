@@ -13,6 +13,7 @@ from src.aggregation import aggregate_team_season
 from src.data_ingest import NBADataIngestor
 from src.features import compute_ball_security, compute_efficiency, compute_pace, compute_shot_profile
 from src.preprocess import Preprocessor
+from src.era import annotate_era, summarize_by_era
 
 DEFAULT_OUTPUT_DIR = Path("data/processed")
 
@@ -72,9 +73,12 @@ def generate_team_season_summary(
     regular_season_only: bool = False,
     output_dir: Path = DEFAULT_OUTPUT_DIR,
     save: bool = True,
-) -> pd.DataFrame:
+    return_era_summary: bool = False,
+) -> pd.DataFrame | tuple[pd.DataFrame, pd.DataFrame]:
     """
     Build team-season aggregates and optionally persist to disk.
+
+    When return_era_summary is True, a tuple of (team_summary, era_summary) is returned.
     """
     features = build_team_game_features(
         ingestor,
@@ -83,12 +87,17 @@ def generate_team_season_summary(
         regular_season_only=regular_season_only,
     )
     summary = aggregate_team_season(features)
+    summary = annotate_era(summary)
+    era_summary = summarize_by_era(summary)
 
     if save:
         output_dir.mkdir(parents=True, exist_ok=True)
         tag = "playoffs" if playoffs_only else "regular" if regular_season_only else "all"
         summary.to_csv(output_dir / f"team_season_{tag}.csv", index=False)
+        era_summary.to_csv(output_dir / f"team_era_{tag}.csv", index=False)
 
+    if return_era_summary:
+        return summary, era_summary
     return summary
 
 
