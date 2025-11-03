@@ -26,6 +26,12 @@ def aggregate_team_season(
         Additional columns to group by (defaults to TEAM_ID, SEASON_YEAR, IS_PLAYOFFS flag).
     metrics:
         Optional mapping of column -> aggregation function (e.g., {'PACE': 'mean'}).
+        Defaults include mean pace/efficiency metrics, win percentage, and total possessions.
+
+    Returns
+    -------
+    pd.DataFrame
+        Aggregated team-season summary including games played and total estimated possessions.
     """
     if group_cols is None:
         group_cols = ["TEAM_ID", "SEASON_YEAR", "IS_PLAYOFFS"]
@@ -36,6 +42,7 @@ def aggregate_team_season(
             "DEF_EFF_PER_100": "mean",
             "THREE_POINT_RATE": "mean",
             "AST_TOV_RATIO": "mean",
+            "EST_POSSESSIONS": "sum",
             "WIN": "mean",
         }
 
@@ -44,8 +51,22 @@ def aggregate_team_season(
     if missing_metrics:
         raise ValueError(f"Cannot aggregate metrics; missing columns: {missing_metrics}")
 
-    agg_df = df.groupby(list(group_cols), dropna=False).agg(metrics).reset_index()
-    agg_df = agg_df.rename(columns={"WIN": "WIN_PCT"})
+    grouped = df.groupby(list(group_cols), dropna=False)
+    agg_df = grouped.agg(metrics).reset_index()
+    games_played = grouped.size().reset_index(name="GAMES_PLAYED")
+
+    agg_df = agg_df.merge(games_played, on=list(group_cols), how="left")
+    agg_df = agg_df.rename(
+        columns={
+            "WIN": "WIN_PCT",
+            "EST_POSSESSIONS": "TOTAL_EST_POSSESSIONS",
+        }
+    )
+    if "TOTAL_EST_POSSESSIONS" in agg_df.columns:
+        agg_df["TOTAL_EST_POSSESSIONS"] = agg_df["TOTAL_EST_POSSESSIONS"].where(
+            agg_df["TOTAL_EST_POSSESSIONS"].notna() & (agg_df["TOTAL_EST_POSSESSIONS"] != 0),
+            pd.NA,
+        )
     return agg_df
 
 
@@ -84,4 +105,3 @@ def aggregate_player_season(
         .reset_index()
     )
     return agg_df
-
