@@ -1,0 +1,209 @@
+Course Project Description
+1. The types of projects
+•
+
+Hands-on project: select a data mining topic related to your research or
+interest or your future career plan, identify the data mining task and data set
+in this project, develop your data mining system/pipeline/solution (e.g., data
+preprocessing, feature extraction and selection, regression, classification,
+clustering, etc.) to complete your task.
+
+•
+
+Kaggle on-going competitions: https://www.kaggle.com/competitions
+
+2. Project groups
+• Form a team with a size of 1, 2, 3, or 4 students and self-sign up via
+Canvas@ASU.
+3. Project pitch
+•
+
+A project pitch is a presentation that includes background, what is the
+problem that you will study, why addressing the problem is important, what
+are the challenges (e.g., data challenges, or modeling challenges), what are the
+essential tasks in your problem formulation (e.g., can your problem be
+formulated as a task of clustering, regression, classification, ranking,
+recommender systems, clustering + classification, clustering + regression, or
+clustering + ranking?) what is your planned data mining system pipeline? what
+are your initial data exploration results (check the example of the reading
+paper: Exploring Millions of Footprints in Location Sharing Services )? can
+your data be directly fed to a data mining system? do you need more data
+collection or data preprocessing? what are your data preprocessing steps? after
+data collection, preprocessing, are your data quality improved and ready for
+building predictive models?
+
+•
+
+You are encouraged to visit office hours or make an appointment to spend 5
+minutes and review your slides with the instructor before your presentation.
+
+•
+
+Your delivery is a video recording: record your presentation and submit your
+
+•
+
+video recording.
+Each presentation will take no more than 15 mins
+
+4. Project progress check point 1 and check point 2
+•
+
+A project progress is a presentation that includes a short summary/recap of the
+project pitch, the key steps and the corresponding technical details of the
+proposed approach/system, your experimental results, and your future plans.
+
+•
+
+For check point 1, please include a short summary of your project pitch; you
+are expected to explore and visualize the data to observe and discover the data
+patterns that are related to solving your prediction problem; you are expected
+to develop a preliminary data mining pipeline/system and elaborate the key
+steps and the corresponding technical details of the proposed approach/system;
+you are expected to present your experimental results; you are expected to
+analyze the potential issues and present your future plans to improve your
+preliminary data mining system; I call it “preliminary” because the data
+
+•
+
+mining system in the check point 1 is not finalized and can be improved.
+For check point 2, you are expected to leverage the data mining pipeline built
+in the check point 1 to explore a variety of predictive methods to compare the
+results, identify potential issues, propose improved methods, and deliver
+enhanced performances, and introduce your future plan.
+
+•
+
+Your delivery is a video recording: record your presentation and submit your
+video recording.
+
+•
+
+You are encouraged to visit office hours or make an appointment to spend 5
+minutes and review your slides with instructor before your presentation.
+
+• Each presentation will take no more than 15 mins.
+5. Final project report
+•
+
+Each group needs to submit a five-page (or more) project report
+
+•
+
+A project report should include title, abstract, Section 1: introduction
+(background, problem, importance, existing literature, system overview, data
+collection, components of your ML system, experimental results), Section 2:
+important definitions (data, prediction target, variables or concepts in your
+data) and problem statement (given, objective, constraints), Section 3:
+overview of proposed approach/system, Section 4: technical details of proposed
+approaches/systems （feature extractions, predictive modeling）, Section 5:
+experiments (including data description, evaluation metrics, baseline methods
+for comparison such as classic methods decision trees, random forest, adaboost,
+SVM, Bayesian classification, logistic classification, kNN, overall performances
+with respect to different metrics, studies of the need of proposed technical
+components of your DM pipeline, case studies), related work, conclusions, and
+references
+
+•
+
+How to choose baseline methods for comparison? If your problem is
+formulated as a task of classification, clustering, ranking, regression, or
+
+recommender systems, you can choose other existing methods of the
+formulated task as baseline methods. Please choose the best model/pipeline as
+your proposed method, and other worse methods as baseline methods.
+6. Report format
+• Use ACM proceeding template:
+https://www.acm.org/publications/proceedings-template
+•
+
+DO NOT paste your code or snapshot into the PDF. At the end of your PDF,
+please include a website (Github, Dropbox, OneDrive, GoogleDrive) address
+that can allow the TA to access your code.
+
+•
+
+Useful links: Writing Technical Articles, Writing a Technical Report, Paper
+
+Writing and Presentations
+7. Important dates: check the syllabus.
+8. Peer evaluation
+•
+
+If your project group contains two or more members, peer evaluation will be
+used in order to score your contributions in the course project.
+
+•
+
+If you work individually, you don’t need to submit the peer evaluation form,
+
+because there are other group members in your group.
+9. Final advice and key principles
+•
+
+Start earlier.
+
+•
+
+You are encouraged to meet me to discuss the directions and technical issues
+of your progress. However, it doesn’t guarantee your reports will be scored
+well. It all depends on your workload and your technical depth as shown in
+your reports. Your score relates to your efforts of implementing different ideas
+to overcome data and model challenges, improve performances, and develop
+novel methods.
+
+•
+
+Final project report, presentations, and peer evaluations are important for
+grading.
+
+10. Evaluation criteria: Your project report will be evaluated based on the following 3
+major aspects:
+•
+
+Technical novelty and contribution:
+i. score 90-100: develop a novel/new algorithm/model/system/framework
+that is different from existing methods to solve your problem.
+ii. score 80-90: try or combine multiple existing methods to solve your
+problem.
+
+iii. score 70-80: apply one existing method to solve your problem.
+iv. score 0-70: unclear about what is the problem and which method is
+appropriate.
+•
+
+Comprehensive experiment designs and improved performances
+i. score 90-100: include data description, baseline methods, evaluation
+metrics; evaluate the proposed method using different evaluation
+metrics and from different perspectives; use different
+visualization/graphs to present experimental results; correctly describe
+the results; provide in-depth explanations and interpretation; identify
+insightful/interesting/surprising findings if possible.
+ii. score 80-90: include data description, baseline methods, evaluation
+metrics; evaluate the proposed method using different evaluation
+metrics but only from the single perspective of overall accuracies; use
+different visualization/graphs to present experimental results; correctly
+describe the results; provide explanations and interpretation.
+iii. score 70-80: include data description, baseline methods, evaluation
+metrics; evaluate the proposed method using different evaluation
+metrics but only from the perspective of overall
+performances/accuracies; use different visualization/graphs to plot
+experimental results; correctly describe the results.
+iv. score 0-70: missing one or all of the components: data description,
+baseline methods, evaluation metrics, overall performance comparisons,
+result description.
+
+•
+
+Report structure and writing
+i. score 90-100: follow the suggested report structure; easy to follow; free
+of typos; a beautiful paper shape/layout.
+ii. score 70-80: follow the suggested report structure; satisfactory clarity;
+some typos; a satisfactory paper shape/layout.
+iii. score 60-70: follow or do not follow the suggested report structure;
+acceptable clarify OR lack of clarity but somewhat understandable; an
+acceptable or OK paper shape/layout; quit a few typos.
+iv. score 0-60: DONOT follow the suggested report structure; difficult to
+follow or even unreadable; full of typos; a bad paper shape/layout.
+
+

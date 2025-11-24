@@ -10,3 +10,6 @@
 - `01_data_overview.ipynb`: quick table listings and regular vs playoff sampling.
 - `02_era_analysis.ipynb`: pace, three-point, and efficiency era trends using regular-season aggregates.
 - `03_era_breakdown.ipynb`: visual summary of the configured era segments (pace progression + three-point rates).
+- `04_win_playoff_modeling.ipynb`: baseline win/playoff modeling with logistic and linear regression on pace/efficiency features.
+- `05_play_style_clustering.ipynb`: K-Means clustering of team-season styles with era and win-rate profiling.
+- `06_rule_change_impacts.ipynb`: rolling trend visuals and pre/post deltas around major rule changes.
